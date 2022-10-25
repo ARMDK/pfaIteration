@@ -19,9 +19,9 @@ CREATE TABLE public.accounts (
 	"username" varchar NOT NULL,
 	"email" varchar, 
 	"password" varchar,
-  "reactionGame_id" bigint, 
-  "memoryGame_id" bigint,
-  "numberGame_id" bigint,
+  	"reactionGame_id" bigint, 
+  	"memoryGame_id" bigint,
+  	"numberGame_id" bigint,
 	CONSTRAINT "accounts_pk" PRIMARY KEY ("_id")
   -- In PSQL, we need to make the foreign key AFTER we create our parent table, we cant make it at the same time
   -- FOREIGN KEY (reactionGame_id) REFERENCES public.reactionGame(reactionGame_id),
