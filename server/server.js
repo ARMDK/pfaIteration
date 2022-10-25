@@ -12,50 +12,69 @@ app.use(express.urlencoded({ extended: true }));
 // static file-serving middleware
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
-app.get('/', (req, res) => {
-  console.log('inside SERVER');
-  res.send('the response from server');
-});
+//New code - might need in order to connect front and back ends
+// app.use((req, res, next) => {
+//   res.setHeader("Access-Control-Allow-Origin", "*");
+//   res.setHeader("Access-Control-Allow-Credentials", "true");
+//   res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+//   res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+//   res.status(200);
+//   next();
+// });
 
-//receiving requests for user sign up
-app.post('/signup', capableHumanController.createUser, (req, res) => {
-  res.status(200).send('Account created');
-});
+//New code
+const userRouter = require('./routes/userRouter');
+const gameRouter = require('./routes/gameRouter');
+const authRouter = require('./routes/authRouter');
+//New code
+app.use('/user', userRouter);
+app.use('/game', gameRouter);
+app.use('/auth', authRouter);
 
-//receiving requests for user login
-app.post('/login', capableHumanController.getUser, (req, res) => {
-  // console.log('inside server', res.locals.userName);
-  res.send({
-    username: res.locals.userName,
-    reactionGameScore: res.locals.reactionScore,
-    memoryGameScore: res.locals.memoryScore,
-    numberGameScore: res.locals.numberScore,
-  });
-});
+// app.get('/', (req, res) => {
+//   console.log('inside SERVER');
+//   res.send('the response from server');
+// });
 
-//receiving requests for storing & updating score in reaction game
-//post request should send { username: user1, score: 200 }  for example
-app.post(
-  '/saveReactionTimeScore',
-  capableHumanController.updateReactionGameScore,
-  (req, res) => {
-    res.status(200).json({
-      userHighScore: res.locals.userHighScore,
-      overallHighScore: res.locals.overallTopScore,
-    });
-  }
-);
+// //receiving requests for user sign up
+// app.post('/signup', capableHumanController.createUser, (req, res) => {
+//   res.status(200).send('Account created');
+// });
 
-app.post(
-  '/saveNumberGameScore',
-  capableHumanController.updateNumberGameScore,
-  (req, res) => {
-    res.status(200).json({
-      userHighLevel: res.locals.userHighLevel,
-      overallHighLevel: res.locals.overallHighLevel,
-    });
-  }
-);
+// //receiving requests for user login
+// app.post('/login', capableHumanController.getUser, (req, res) => {
+//   // console.log('inside server', res.locals.userName);
+//   res.send({
+//     username: res.locals.userName,
+//     reactionGameScore: res.locals.reactionScore,
+//     memoryGameScore: res.locals.memoryScore,
+//     numberGameScore: res.locals.numberScore,
+//   });
+// });
+
+// //receiving requests for storing & updating score in reaction game
+// //post request should send { username: user1, score: 200 }  for example
+// app.post(
+//   '/saveReactionTimeScore',
+//   capableHumanController.updateReactionGameScore,
+//   (req, res) => {
+//     res.status(200).json({
+//       userHighScore: res.locals.userHighScore,
+//       overallHighScore: res.locals.overallTopScore,
+//     });
+//   }
+// );
+
+// app.post(
+//   '/saveNumberGameScore',
+//   capableHumanController.updateNumberGameScore,
+//   (req, res) => {
+//     res.status(200).json({
+//       userHighLevel: res.locals.userHighLevel,
+//       overallHighLevel: res.locals.overallHighLevel,
+//     });
+//   }
+// );
 
 
 //Vivian added a global error handler
