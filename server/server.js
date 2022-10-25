@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const PORT = 3000;
-const capableHumanController = require('../controllers/capableHumanController');
+const capableHumanController = require('./controllers/capableHumanController');
 const dotenv = require('dotenv').config();
 
 app.use(cors());
@@ -56,6 +56,7 @@ app.post(
     });
   }
 );
+
 
 //Vivian added a global error handler
 app.use((err, req, res, next) => {
