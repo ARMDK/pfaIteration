@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 const Login = ({ setCurrentUser, setGameMode }) => {
@@ -25,8 +25,9 @@ const Login = ({ setCurrentUser, setGameMode }) => {
     // console.log(userName, email, password);
     if (userName.length === 0 || password.length === 0) {
       return;
+    
     }
-
+    console.log("here in Login.js subnitForm Handler: ", userName, password)
     server
       .post('/login', {
         username: userName,
