@@ -15,8 +15,7 @@ const MainContainer = () => {
   return (
     <div className='MainContainer'>
       <Routes>
-        <Route
-          path='/'
+        <Route path='/'
           element={
             <>
               <Navbar setGameMode={setGameMode} currentUser={currentUser} />
@@ -25,8 +24,7 @@ const MainContainer = () => {
             </>
           }
         ></Route>
-        <Route
-          path='/game/reactionTime'
+        <Route path='/game/reactionTime'
           element={
             <>
               <Navbar currentUser={currentUser} setGameMode={setGameMode} />
@@ -49,8 +47,7 @@ const MainContainer = () => {
             </>
           }
         ></Route>
-        <Route
-          path='/game/numberMemory'
+        <Route path='/game/numberMemory'
           element={
             <>
               <Navbar setGameMode={setGameMode} currentUser={currentUser} />
@@ -59,8 +56,7 @@ const MainContainer = () => {
             </>
           }
         ></Route>
-        <Route
-          path='/user/signUp'
+        <Route path='/user/signUp'
           element={
             <>
               <Navbar setGameMode={setGameMode} />
@@ -68,8 +64,7 @@ const MainContainer = () => {
             </>
           }
         ></Route>
-        <Route
-          path='/user/login'
+        <Route path='/user/login'
           element={
             <>
               <Navbar setGameMode={setGameMode} />

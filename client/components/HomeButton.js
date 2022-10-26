@@ -10,7 +10,7 @@ const HomeButton = ({ setGameMode }) => {
   };
   return (
     <button onClick={handleClickLogin} className="homeButton">
-      <img src="./Screen_Shot_2022-10-24_at_11.35.52_AM.png"></img>
+      <img src="./GameBetterLogoHomeButton.png" height="140px" width="125px"></img>
     </button>
   );
 };
