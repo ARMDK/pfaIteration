@@ -24,7 +24,7 @@ const Login = ({ setCurrentUser, setGameMode }) => {
     //perform post request to the server
     // console.log(userName, email, password);
     if (userName.length === 0 || password.length === 0) {
-      return;
+      throw new Error('You must enter a username and password!')
     
     }
     console.log("here in Login.js subnitForm Handler: ", userName, password)

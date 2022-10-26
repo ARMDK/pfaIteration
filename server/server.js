@@ -23,9 +23,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 // });
 
 //New code
-const userRouter = require('./routes/userRouter');
-const gameRouter = require('./routes/gameRouter');
-const authRouter = require('./routes/authRouter');
+const userRouter = require('./routers/userRouter');
+const gameRouter = require('./routers/gameRouter');
+const authRouter = require('./routers/authRouter');
 //New code
 app.use('/user', userRouter);
 app.use('/game', gameRouter);
