@@ -1,4 +1,4 @@
-const db = require('./models/capableHumanModels');
+const db = require('../models/capableHumanModels');
 
 const gameController = {};
 
@@ -20,7 +20,22 @@ const gameController = {};
     //query the games tables
     
 
-capableHumanController.updateReactionGameScore = async (req, res, next) => {
+gameController.updateGameScore = async (req, res, next) => {
+  const { username, score } = req.body;
+  try {
+    console.log('hello, you made it to updateGameScore')
+    console.log('username, score', username, score)
+    next();
+  }
+  catch(err) {
+    next ( {
+      message: { err: 'this is an error in updateGameScore', } 
+    });
+  }
+}
+
+
+CapableController.updateReactionGameScore = async (req, res, next) => {
     const { username, score } = req.body;
   
     //first check if the user's score is defined in the table already w/ a query
@@ -78,7 +93,7 @@ capableHumanController.updateReactionGameScore = async (req, res, next) => {
   }
   
   //Number Memory Game Method
-  capableHumanController.updateNumberGameScore = async (req, res, next) => {
+CapableController.updateNumberGameScore = async (req, res, next) => {
     const { username, score } = req.body;
   
     //first check if the user's score is defined in the table already w/ a query

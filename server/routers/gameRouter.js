@@ -4,7 +4,7 @@ const router = express.Router();
 
 const gameController = require('../controllers/gameController');
 
-router.post( '/savescore', gameController,
+router.post('/savescore', gameController,
     (req, res) => {
         res.status(200).send('updated score')
     }
