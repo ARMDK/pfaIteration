@@ -6,6 +6,7 @@ import VerbalMemory from './VerbalMemory';
 import ReactionTimeGame from './ReactionTimeGame';
 import NumberMemoryGame from './NumberMemoryGame';
 import HomeButton from './HomeButton';
+import TopScores from './TopScores'
 
 import axios from 'axios';
 
@@ -32,8 +33,9 @@ const MainDisplay = ({
   const saveReactionTimeScore = (e) => {
     console.log('this is currentUser', currentUser.username);
     server
-      .post('/game/savescore', {
+      .post('/game/scores', {
         username: currentUser.username,
+        game_id: 1,
         top_score: currentSpeedScore,
       })
       .then((res) => {
@@ -83,7 +85,16 @@ const MainDisplay = ({
         />
       </>
     );
-  } else
+  } else if (gameMode === 'topScores') {
+    return (
+      <div>
+        <TopScores 
+          gameMode={gameMode}
+          setGameMode={setGameMode} 
+        />
+      </div>
+    )
+  } else {
     return (
       <div id="MainPageContainer">
         <div id="MainPage">
@@ -135,5 +146,7 @@ const MainDisplay = ({
       </div>
     );
 };
+
+}
 
 export default MainDisplay;

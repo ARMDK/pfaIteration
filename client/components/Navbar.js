@@ -5,6 +5,8 @@ import MainDisplay from './MainDisplay';
 import SignUpButton from './SignUpButton';
 import LoginButton from './LoginButton';
 import HomeButton from './HomeButton';
+import TopScoresButton from './TopScoresButton';
+
 
 const Navbar = ({ setGameMode, currentUser }) => {
   return (
@@ -14,6 +16,7 @@ const Navbar = ({ setGameMode, currentUser }) => {
       <div>
         <LoginButton setGameMode={setGameMode} />
         <SignUpButton setGameMode={setGameMode} />
+        <TopScoresButton setGameMode={setGameMode}/>
       </div>
     </div>
   );

@@ -76,6 +76,18 @@ const MainContainer = () => {
             </>
           }
         ></Route>
+                <Route path='/game/scores'
+          element={
+            <>
+              <Navbar setGameMode={setGameMode} />
+              <MainDisplay
+                gameMode={gameMode}
+                setCurrentUser={setCurrentUser}
+                setGameMode={setGameMode}
+              />
+            </>
+          }
+        ></Route>
       </Routes>
     </div>
   );
