@@ -28,8 +28,8 @@ const gameRouter = require('./routers/gameRouter');
 const authRouter = require('./routers/authRouter');
 //New code
 app.use('/user', userRouter);
-app.use('/game', gameRouter);
-app.use('/auth', authRouter);
+//app.use('/game', gameRouter);
+//app.use('/auth', authRouter);
 
 // app.get('/', (req, res) => {
 //   console.log('inside SERVER');
