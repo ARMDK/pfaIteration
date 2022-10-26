@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const cors = require('cors');
 const PORT = 3000;
-const capableHumanController = require('./controllers/capableHumanController');
+//const userRouter = require('./routers/userRouter');
 const dotenv = require('dotenv').config();
 
 app.use(cors());
