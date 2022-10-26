@@ -17,16 +17,18 @@
 .Navbar {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
   height: 70px;
+  background: linear-gradient(45deg, rgb(56, 41, 80), #300494);
   
   .navRight {
     margin: 0 5px;
     height: 70px;
     width: 100px;
-    background-color: #FFD43B;
-    border-radius: 20%;
+    background-color: #3ba4d4;
+    border-radius: 40%;
   }
 }
 
@@ -43,7 +45,7 @@
   justify-content: center;
   height: 650px;
   padding-top: 30px;
-  background-color: #e6e3dc;
+  background: linear-gradient(225deg, rgb(56, 41, 80), #300494);
 
   #MainPage {
     display: flex;
@@ -66,7 +68,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #FFD43B;
+  background: linear-gradient(45deg, #3ba4d4, #9b076a);
+  color: rgb(214, 212, 212);
   padding-left: 50px;
   padding-right: 50px;
   width: 250px;
@@ -194,6 +197,10 @@
     }
   }
 }
+.homeButton{
+  background: none;
+  box-shadow: none;
+}
 
 .homeButton:hover{
   cursor: pointer;
@@ -206,7 +213,8 @@
 .signupLogin:hover {
   cursor: pointer;
   color: #001F3F;
-  background-color: #fff
+  background-color: #fff;
+  box-shadow: 1px 5px 1px #888888;
 }
 
 .red {
