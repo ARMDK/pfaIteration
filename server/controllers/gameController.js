@@ -35,7 +35,7 @@ gameController.updateGameScore = async (req, res, next) => {
 }
 
 
-CapableController.updateReactionGameScore = async (req, res, next) => {
+gameController.updateReactionGameScore = async (req, res, next) => {
     const { username, score } = req.body;
   
     //first check if the user's score is defined in the table already w/ a query
@@ -93,7 +93,7 @@ CapableController.updateReactionGameScore = async (req, res, next) => {
   }
   
   //Number Memory Game Method
-CapableController.updateNumberGameScore = async (req, res, next) => {
+gameController.updateNumberGameScore = async (req, res, next) => {
     const { username, score } = req.body;
   
     //first check if the user's score is defined in the table already w/ a query
