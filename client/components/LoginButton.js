@@ -5,7 +5,7 @@ const LoginButton = ({ setGameMode }) => {
     const navigate = useNavigate();
     const handleClickLogin = (e) => {
       e.preventDefault();
-      navigate('/login');
+      navigate('/user/login');
       setGameMode('login');
     };
     return (

@@ -53,7 +53,7 @@ const NumberMemoryGame = ({ currentUser }) => {
     console.log(currentUser);
     console.log('level', level);
     server
-      .post('/saveNumberGameScore', {
+      .post('/game/saveNumberGameScore', {
         username: currentUser.username,
         score: level,
       })

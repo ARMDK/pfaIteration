@@ -29,7 +29,7 @@ const Login = ({ setCurrentUser, setGameMode }) => {
     }
     console.log("here in Login.js subnitForm Handler: ", userName, password)
     server
-      .post('/login', {
+      .post('/user/login', {
         username: userName,
         password: password,
       })

@@ -5,7 +5,7 @@ const NumberMemoryButton = ({ setGameMode }) => {
   const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
-    navigate('/numberMemory');
+    navigate('/game/numberMemory');
     setGameMode('numberMemoryGame');
   };
   return (

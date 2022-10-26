@@ -31,7 +31,7 @@ const SignUp = ({ setGameMode }) => {
       return;
     }
     server
-      .post('/signup', {
+      .post('/user/signup', {
         username: userName,
         email: email,
         password: password,
@@ -41,12 +41,12 @@ const SignUp = ({ setGameMode }) => {
         console.error(err);
       });
     setGameMode('login');
-    navigate('/login');
+    navigate('/user/login');
   }
 
   const handleClick = (e) => {
     e.preventDefault();
-    navigate('/signUp');
+    navigate('/user/signUp');
     setGameMode('signUp');
   };
 
