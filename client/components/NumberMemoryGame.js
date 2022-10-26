@@ -52,15 +52,16 @@ const NumberMemoryGame = ({ currentUser }) => {
   const saveScore = (level) => {
     console.log(currentUser);
     console.log('level', level);
+    // server.post(''/game/saveNumberGameScore'')
     server
-      .post('/game/saveNumberGameScore', {
+      .post("/game/savescore", {
         username: currentUser.username,
         score: level,
       })
       .then((res) => {
-        const { userHighLevel, overallHighLevel } = res.data;
-        setUserScore(res.data.userHighLevel);
-        setOverallScore(res.data.overallHighLevel);
+        const { userHighScore, overallHighScore } = res.data;
+        setUserScore(res.data.userHighScore);
+        setOverallScore(res.data.overallHighScore);
       })
       .catch((err) => {
         console.log(err);

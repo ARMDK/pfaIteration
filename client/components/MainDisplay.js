@@ -32,9 +32,9 @@ const MainDisplay = ({
   const saveReactionTimeScore = (e) => {
     console.log('this is currentUser', currentUser.username);
     server
-      .post('/game/saveReactionTimeScore', {
+      .post('/game/savescore', {
         username: currentUser.username,
-        score: currentSpeedScore,
+        top_score: currentSpeedScore,
       })
       .then((res) => {
         const { userHighScore, overallHighScore } = res.data;
