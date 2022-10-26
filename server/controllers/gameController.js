@@ -19,10 +19,12 @@ gameController.updateGameScore = async (req, res, next) => {
       let overall = await db.query(`UPDATE test.games SET top_score='${newTopScore}' WHERE game_id='${game_id}' RETURNING test.games.*;`);
       res.locals.overallHighScore = overall.rows[0].top_score;
     } else {
-      let insertNew = `INSERT INTO test.scoreboard VALUES (6, ${game_id}, ${user_id}, ${top_score}) RETURNING test.scoreboard.*;`
-      let test = await db.query(insertNew);
+      let insertNew = await db.query(`INSERT INTO test.scoreboard VALUES (6, ${game_id}, ${user_id}, ${top_score}) RETURNING test.scoreboard.*;`);
       console.log(insertNew);
-      res.locals.newScoreboard = insertNew.rows[0].top_score;
+      res.locals.userHighScore = insertNew.rows[0].top_score;
+      const newTopScore = Math.max(...newResult.rows.map((el) => el.top_score));
+      let overall = await db.query(`UPDATE test.games SET top_score='${newTopScore}' WHERE game_id='${game_id}' RETURNING test.games.*;`);
+      res.locals.overallHighScore = overall.rows[0].top_score;
     }
     return next();
   }
@@ -33,6 +35,10 @@ gameController.updateGameScore = async (req, res, next) => {
       message: {err: 'an error occured'}
     });
   }
+}
+
+gameController.getScores = async (req, res, next) => {
+  
 }
 
 module.exports = gameController;
@@ -152,4 +158,4 @@ module.exports = gameController;
 //     res.locals.overallHighLevel = topScores['rows'][0]['highscore'];
 //     return next();
 //   }
-
+// let insertNew `INSERT INTO test.scoreboard VALUES (6, ${game_id}, ${user_id}, ${top_score}) RETURNING test.scoreboard.*;`overainsertNew.rows

@@ -8,15 +8,15 @@ import TopScoresButton from './TopScoresButton';
 import TopScores from './TopScores';
 import { Route, Routes } from 'react-router-dom';
 
-const LoginContainer = () => {
-    const [gameMode, setGameMode] = useState('loginPage');
+const TopScoreContainer = () => {
+    const [gameMode, setGameMode] = useState('topScores');
     const [currentUser, setCurrentUser] = useState(null);
     const [currentSpeedScore, setCurrentSpeedScore] = useState(null);
     const [highSpeedScore, setHighSpeedScore] = useState(null);
     const [overallHighSpeedScore, setOverallHighSpeedScore] = useState(null);
 
     return (
-      <div className='LoginContainer'>
+      <div className='TopScoresContainer'>
         <Routes>
           <Route path='/'
               element={
@@ -62,4 +62,4 @@ const LoginContainer = () => {
 
 }
 
-module.exports = LoginContainer;
+module.exports = TopScoreContainer;
