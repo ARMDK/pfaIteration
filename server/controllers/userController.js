@@ -41,8 +41,7 @@ userController.loginUser = async(req,res,next) =>  {
 //   } 
 //  });
  
-<<<<<<< HEAD
-=======
+
 //  app.post('/signup', async (req, res) => {
 //   try {
 //    const user = await db('users').first('*').where({username: req.body.username});
@@ -60,9 +59,8 @@ userController.loginUser = async(req,res,next) =>  {
 //   } 
 //  });
  
-const Authcontroller = {};
-Authcontroller.verifyUser = async (req, res, next) => {}
->>>>>>> dev
+
+
 
 
 
