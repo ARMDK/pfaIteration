@@ -1,4 +1,4 @@
-const db = require('./models/capableHumanModels');
+const db = require('../models/capableHumanModels');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 /* CREATE TABLE public.accounts (
@@ -13,8 +13,6 @@ const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 const authController = {};
 
-authController.
-
 // authController.bcrypt.hash(req.body.passwordsignup, saltRounds, function (err, hash){
 //     // sql query to insert in schema INSERT INTO table_name (column1, column2, column3, ...)
 //         name: req.body.username
@@ -27,4 +25,4 @@ authController.
 //         }
 //     }
 // })
-module.exports = authController;
+//module.exports = authController;
