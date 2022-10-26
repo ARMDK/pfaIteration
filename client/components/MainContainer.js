@@ -26,7 +26,7 @@ const MainContainer = () => {
           }
         ></Route>
         <Route
-          path='/reactionTime'
+          path='/game/reactionTime'
           element={
             <>
               <Navbar currentUser={currentUser} setGameMode={setGameMode} />
@@ -50,7 +50,7 @@ const MainContainer = () => {
           }
         ></Route>
         <Route
-          path='/numberMemory'
+          path='/game/numberMemory'
           element={
             <>
               <Navbar setGameMode={setGameMode} currentUser={currentUser} />
@@ -60,7 +60,7 @@ const MainContainer = () => {
           }
         ></Route>
         <Route
-          path='/signUp'
+          path='/user/signUp'
           element={
             <>
               <Navbar setGameMode={setGameMode} />
@@ -69,7 +69,7 @@ const MainContainer = () => {
           }
         ></Route>
         <Route
-          path='/login'
+          path='/user/login'
           element={
             <>
               <Navbar setGameMode={setGameMode} />
