@@ -5,7 +5,7 @@ const ReactionTimeButton = ({ setGameMode }) => {
   const navigate = useNavigate();
   const handleClick = (e) => {
     e.preventDefault();
-    navigate('/reactionTime');
+    navigate('/game/reactionTime');
     setGameMode('reactionTime');
   };
   return (

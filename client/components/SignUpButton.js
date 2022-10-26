@@ -5,7 +5,7 @@ const SignUpButton = ({ setGameMode }) => {
     const navigate = useNavigate();
     const handleClickSignup = (e) => {
       e.preventDefault();
-      navigate('/signUp');
+      navigate('/user/signUp');
       setGameMode('signUp');
     };
     return (
