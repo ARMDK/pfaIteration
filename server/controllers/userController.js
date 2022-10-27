@@ -1,14 +1,13 @@
-const express  =  require('express');
+const express = require('express');
 const db = require('../models/capableHumanModels');
 const path = require('path');
 const bcrypt = require('bcrypt');
 
 const userController = {};
 
-userController.loginUser = async(req,res,next) =>  {
-  const {username, password} = req.body;
+userController.loginUser = async (req, res, next) => {
+  const { username, password } = req.body;
   console.log('from req.body', username, password)
-  
   try {
     //try block await db.query and assign the eval result to a variable
     //check if the username and password are true
