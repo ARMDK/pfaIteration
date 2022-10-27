@@ -4,7 +4,7 @@ const uri = process.env.PG_URI;
 
 // create a new pool here using the connection string above
 const pool = new Pool({
-  connectionString: uri
+  connectionString: 'postgres://ykvkvdzm:C6wTI3PjKxpBsGoXN9i0NY8xNfcS4Kpx@heffalump.db.elephantsql.com/ykvkvdzm'
 });
 
 

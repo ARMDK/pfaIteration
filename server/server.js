@@ -29,7 +29,7 @@ const authRouter = require('./routers/authRouter');
 //New code
 app.use('/user', userRouter);
 app.use('/game', gameRouter);
-app.use('/auth', authRouter);
+//app.use('/auth', authRouter);
 
 // app.get('/', (req, res) => {
 //   console.log('inside SERVER');
@@ -90,5 +90,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}...`);
+  console.log(`Server listening on port: ${PORT}...`)
 });

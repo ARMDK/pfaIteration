@@ -7,8 +7,8 @@ const userController = require('../controllers/userController');
 // router.post('/signup', userController.createUser, (req, res) => { 
 //     res.status(200).send('hello in create user');
 // });
-
+// post should be get 
 router.post('/login', userController.loginUser, (req, res) => {  
-    res.status(200).send('hello from login user')
+    res.status(200).json('hello from login user router')
 });
 module.exports = router;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+
 const Login = ({ setCurrentUser, setGameMode }) => {
   const navigate = useNavigate();
   const server = axios.create({

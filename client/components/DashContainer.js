@@ -2,11 +2,9 @@
 import React, { useState } from 'react';
 
 import Navbar from './Navbar';
-import Login from './Login';
-import SignUp from './SignUp';
-import LoginButton from './LoginButton';
-import SignUpButton from './SignUpButton';
 import StatsContainer from './StatsContainer';
+import TopScoresButton from './TopScoresButton';
+import TopScores from './TopScores';
 import { Route, Routes } from 'react-router-dom';
 
 const LoginContainer = () => {
@@ -48,7 +46,15 @@ const LoginContainer = () => {
             }
           >
           </Route>
-
+          <Route path='/game/scores'
+              element={
+                <>
+                  <Navbar setGameMode={setGameMode} currentUser={currentUser} />
+                  <StatsContainer />
+                </>
+              }
+          >
+          </Route>
     </Routes>
         </div>
     );
