@@ -29,15 +29,7 @@ const DashContainer = () => {
             </>
           }
           ></Route>
-          <Route path='/game/scores'
-              element={
-                <>
-                  <Navbar setGameMode={setGameMode} currentUser={currentUser} />
-                  <StatsContainer />
-                </>
-              }
-          >
-          </Route>
+    
           <Route path='/game/reactionTime'
           element={
             <>
@@ -71,6 +63,17 @@ const DashContainer = () => {
             </>
           }
         ></Route>
+
+        <Route path='/game/scores'
+          element={
+            <>
+              <Navbar setGameMode={setGameMode} currentUser={currentUser} />
+              <TopScores setGameMode={setGameMode} currentUser={currentUser} />
+              <StatsContainer gameMode={gameMode} currentUser={currentUser} />  
+            </>
+          }
+        ></Route>
+
     </Routes>
         </div>
     );

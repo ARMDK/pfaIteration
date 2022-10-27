@@ -23,11 +23,9 @@ userController.loginUser = async (req, res, next) => {
           return next()
         }
         else{
-          return next({
-            log: 'Unsuccessful Login caught in loginUser Error inside userController',
-            status: 500,
-            message: { err: `Unsuccessful Login, Please check Username and Password ` }
-            });
+          res.locals.username = 'failed'
+          return next()
+
         }
   }catch(err) {
     return next({

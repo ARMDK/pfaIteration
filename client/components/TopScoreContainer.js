@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import MainDisplay from './MainDisplay';
 import Navbar from './Navbar';
-import LoginButton from './LoginButton';
-import SignUpButton from './SignUpButton';
 import StatsContainer from './StatsContainer';
 import TopScoresButton from './TopScoresButton';
 import TopScores from './TopScores';
