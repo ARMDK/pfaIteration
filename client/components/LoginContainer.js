@@ -1,6 +1,9 @@
+// Not connected yet
 import React, { useState } from 'react';
-import MainDisplay from './MainDisplay';
+
 import Navbar from './Navbar';
+import Login from './Login';
+import SignUp from './SignUp';
 import LoginButton from './LoginButton';
 import SignUpButton from './SignUpButton';
 import StatsContainer from './StatsContainer';

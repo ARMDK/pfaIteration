@@ -11,6 +11,9 @@ const Navbar = ({ setGameMode, currentUser }) => {
     <div className="Navbar">
       <HomeButton setGameMode={setGameMode} />
         <h4>{currentUser ? 'Welcome back, ' + currentUser.username : null}</h4>
+        <h3>About</h3>
+        <h3>Username</h3>
+        <h3>Signout</h3>
       <div>
         <LoginButton setGameMode={setGameMode} />
         <SignUpButton setGameMode={setGameMode} />
