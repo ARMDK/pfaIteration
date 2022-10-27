@@ -35,9 +35,15 @@ const Login = ({ setCurrentUser, setGameMode }) => {
         password: password,
       })
       .then((res) => {
-        setCurrentUser(res.data);
-        console.log(res);
-        // setGameMode('mainPage');
+        if (res.data === userName) {
+          setCurrentUser(res.data);
+          console.log(res);
+          //setGameMode('mainPage');
+          navigate('/dash')
+        } else {
+          alert('Login failed!')
+        }
+        
       })
       .catch((err) => {
         console.error(err);
