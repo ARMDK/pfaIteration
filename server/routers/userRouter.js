@@ -8,12 +8,13 @@ const userController = require('../controllers/userController');
 router.get(
     "/get", async (req, res, next) => {
     try {
-      const result = await db.query("SELECT * FROM test.users");
+      const result = await db.query("SELECT * FROM test.users RETURNING *" );
       return res.json(result.rows);
     } catch (e) {
       return next(e);
     }
   });
+
 router.post(
     "/post", async (req, res, next) => {
     try {

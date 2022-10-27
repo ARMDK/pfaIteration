@@ -20,7 +20,6 @@ userController.signup = async (req, res, next) =>{
     }
   });
 }
-
 userController.loginUser = async(req,res,next) =>  {
   const {username, password} = req.body;
   console.log('from req.body', username, password)
@@ -72,6 +71,4 @@ userController.loginUser = async(req,res,next) =>  {
   };
 }
 
-  
-	
 module.exports = userController;
