@@ -28,7 +28,7 @@ const Login = ({ setCurrentUser, setGameMode }) => {
       throw new Error('You must enter a username and password!')
     
     }
-    console.log("here in Login.js subnitForm Handler: ", userName, password)
+    console.log("here in Login.js submitForm Handler: ", userName, password)
     server
       .post('/user/login', {
         username: userName,
@@ -42,8 +42,8 @@ const Login = ({ setCurrentUser, setGameMode }) => {
       .catch((err) => {
         console.error(err);
       });
-    setGameMode('mainPage');
-    navigate('/');
+    setGameMode('login');
+    navigate('/user/login');
     // console.log(`this is the user`)
   };
 
@@ -71,7 +71,7 @@ const Login = ({ setCurrentUser, setGameMode }) => {
             required='required'
           ></input>
         </>
-        <input onClick={submitForm} type='button' value='submit' />
+        <input onClick={submitForm} type='button' value='Log in' />
       </form>
     </div>
   );

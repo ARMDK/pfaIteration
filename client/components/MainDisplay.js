@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SignUp from './SignUp';
 import Login from './Login';
+import DashDisplay from './DashDisplay';
 
 // import ReactionTimeButton from './ReactionTimeButton';
 // import NumberMemoryButton from './NumberMemoryButton';
@@ -89,22 +90,30 @@ const MainDisplay = ({
       </>
     );
   } 
-  // else if (gameMode === 'topScores') {
-  //   return (
-  //     <div>
-  //       <TopScores 
-  //         gameMode={gameMode}
-  //         setGameMode={setGameMode} 
-  //       />
-  //     </div>
-  //   )
-  // } 
+  else if (gameMode === 'topScores') {
+    return (
+      <div>
+        <TopScores 
+          gameMode={gameMode}
+          setGameMode={setGameMode} 
+        />
+      </div>
+    )
+  } 
+  else if (gameMode === 'dashboard'){
+    return (
+      <div>
+        <DashDisplay />
+      </div>
+    )
+  }
   else {
     return (
         <div className='FrontPage'>
           {/* <Login /> */}
-          <UserEnter />
-          
+          {/* <UserEnter /> */}
+          <DashDisplay />
+
         </div>
     );
 };

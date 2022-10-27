@@ -7,7 +7,7 @@ import TopScoresButton from './TopScoresButton';
 import TopScores from './TopScores';
 import { Route, Routes } from 'react-router-dom';
 
-const LoginContainer = () => {
+const DashContainer = () => {
     const [gameMode, setGameMode] = useState('loginPage');
     const [currentUser, setCurrentUser] = useState(null);
     const [currentSpeedScore, setCurrentSpeedScore] = useState(null);
@@ -61,4 +61,4 @@ const LoginContainer = () => {
 
 }
 
-module.exports = LoginContainer;
+module.exports = DashContainer;

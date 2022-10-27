@@ -13,7 +13,7 @@ const UserEnter = ({ setCurrentUser, setGameMode }) => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleClickHome = (e) => {
+  const handleClickHome = async (e) => {
     e.preventDefault();
     navigate('/dash');
     setGameMode('dashboard');
@@ -24,8 +24,8 @@ const UserEnter = ({ setCurrentUser, setGameMode }) => {
         <LoginButton />
         <SignUpButton />
         
-        <button onClick={handleClickHome}>
-            Just take me home dammit.
+        <button onClick={(e) => {handleClickHome(e)}}>
+            Just take me to the games
         </button>
     </div>
   );

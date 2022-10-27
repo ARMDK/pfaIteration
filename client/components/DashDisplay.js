@@ -141,4 +141,4 @@ const DashDisplay = ({
 };
 };
 
-export default MainDisplay;
+export default DashDisplay;
