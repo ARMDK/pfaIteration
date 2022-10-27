@@ -1,5 +1,4 @@
 import React, { useEffect, useTimer, useState } from 'react';
-// import ActiveReactionTimeGame from './ActiveReactionTimeGame';
 const ReactionTimeGame = ({
   gameStarted,
   setGameStarted,
@@ -94,4 +93,3 @@ const ReactionTimeGame = ({
 };
 
 export default ReactionTimeGame;
-

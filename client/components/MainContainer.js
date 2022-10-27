@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import MainDisplay from './MainDisplay';
+import DashDisplay from './DashDisplay';
 import Navbar from './Navbar';
+import ReactionTimeGame from './ReactionTimeGame';
+import NumberMemoryGame from './NumberMemoryGame';
 import StatsContainer from './StatsContainer';
 import { Route, Routes } from 'react-router-dom';
+import Login from './Login';
+import SignUp from './SignUp';
 
 const MainContainer = () => {
   const [gameMode, setGameMode] = useState('mainPage');
@@ -24,43 +29,21 @@ const MainContainer = () => {
             </>
           }
         ></Route>
-        <Route path='/game/reactionTime'
-          element={
-            <>
-              <Navbar currentUser={currentUser} setGameMode={setGameMode} />
-              <MainDisplay
-                gameMode={gameMode}
-                currentUser={currentUser}
-                currentSpeedScore={currentSpeedScore}
-                setCurrentSpeedScore={setCurrentSpeedScore}
-                setHighSpeedScore={setHighSpeedScore}
-                overallHighSpeedScore={overallHighSpeedScore}
-                setOverallHighSpeedScore={setOverallHighSpeedScore}
-              />
-              <StatsContainer
-                currentUser={currentUser}
-                highSpeedScore={highSpeedScore}
-                currentSpeedScore={currentSpeedScore}
-                overallHighSpeedScore={overallHighSpeedScore}
-                gameMode={gameMode}
-              />
-            </>
-          }
-        ></Route>
-        <Route path='/game/numberMemory'
+        <Route path='/dash'
           element={
             <>
               <Navbar setGameMode={setGameMode} currentUser={currentUser} />
-              <MainDisplay gameMode={gameMode} currentUser={currentUser} />
-              <StatsContainer gameMode={gameMode} currentUser={currentUser} />  
+              <DashDisplay gameMode={gameMode} setGameMode={setGameMode} />
+              <StatsContainer />
             </>
           }
         ></Route>
+        
         <Route path='/user/signUp'
           element={
             <>
               <Navbar setGameMode={setGameMode} />
-              <MainDisplay setGameMode={setGameMode} gameMode={gameMode} />
+              <SignUp setGameMode={setGameMode} gameMode={gameMode} />
             </>
           }
         ></Route>
@@ -68,7 +51,7 @@ const MainContainer = () => {
           element={
             <>
               <Navbar setGameMode={setGameMode} />
-              <MainDisplay
+              <Login
                 gameMode={gameMode}
                 setCurrentUser={setCurrentUser}
                 setGameMode={setGameMode}
@@ -88,6 +71,42 @@ const MainContainer = () => {
             </>
           }
         ></Route>
+
+        <Route path='/game/reactionTime'
+          element={
+            <>
+              <Navbar currentUser={currentUser} setGameMode={setGameMode} />
+              <ReactionTimeGame
+                gameMode={gameMode}
+                currentUser={currentUser}
+                currentSpeedScore={currentSpeedScore}
+                setCurrentSpeedScore={setCurrentSpeedScore}
+                setHighSpeedScore={setHighSpeedScore}
+                overallHighSpeedScore={overallHighSpeedScore}
+                setOverallHighSpeedScore={setOverallHighSpeedScore}
+              />
+              <StatsContainer
+                currentUser={currentUser}
+                highSpeedScore={highSpeedScore}
+                currentSpeedScore={currentSpeedScore}
+                overallHighSpeedScore={overallHighSpeedScore}
+                gameMode={gameMode}
+              />
+            </>
+          }
+        ></Route>
+
+        <Route path='/game/numberMemory'
+          element={
+            <>
+              <Navbar setGameMode={setGameMode} currentUser={currentUser} />
+              <NumberMemoryGame setGameMode={setGameMode} currentUser={currentUser} />
+              {/* <MainDisplay gameMode={gameMode} currentUser={currentUser} /> */}
+              <StatsContainer gameMode={gameMode} currentUser={currentUser} />  
+            </>
+          }
+        ></Route>
+
       </Routes>
     </div>
   );

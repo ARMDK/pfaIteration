@@ -4,7 +4,11 @@ const router = express.Router();
 
 const gameController = require('../controllers/gameController');
 
-router.get('scores')
+router.get('/scores', gameController.getScores, 
+    (req, res) => {
+        res.status(200).json(res.locals.scores)
+    }
+)
 
 router.post('/scores', gameController.updateGameScore,
     (req, res) => {

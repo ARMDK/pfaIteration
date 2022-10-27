@@ -7,8 +7,9 @@ const SignUp = ({ setGameMode }) => {
     baseURL: 'http://localhost:3000/',
   });
 
+  const [fname, setFname] = useState('');
+  const [lname, setLname] = useState('');
   const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleUsernameInput = (e) => {
@@ -54,11 +55,20 @@ const SignUp = ({ setGameMode }) => {
     <div className='SignUp'>
       <form>
         <h3>Sign up here!</h3>
-        <label htmlFor='email'>Email: </label>
+        <label htmlFor='fName'>First name: </label>
         <input
           onChange={handleEmailInput}
-          id='emailInput'
-          name='email'
+          id='fNameInput'
+          name='fName'
+          type='text'
+          required='required'
+        ></input>
+
+        <label htmlFor='lName'>Last name: </label>
+        <input
+          onChange={handleEmailInput}
+          id='lNameInput'
+          name='lName'
           type='text'
           required='required'
         ></input>

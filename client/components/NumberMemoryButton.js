@@ -9,7 +9,7 @@ const NumberMemoryButton = ({ setGameMode }) => {
     setGameMode('numberMemoryGame');
   };
   return (
-    <button onClick={handleClick} className="ReactionTimeButton">
+    <button onClick={handleClick} className="GameCardButton">
       <strong className="cardTitle">Number Memory</strong>
       <div className="fontAwesome">
         <i className="fa-solid fa-list-ol fa-2xl"></i>
