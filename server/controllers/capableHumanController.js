@@ -11,12 +11,10 @@ capableHumanController.createUser = async (req, res, next) => {
 /*
 const { username, email, password } = req.body;
   console.log(username, email, password);
-
   if (!username || !email || !password) {
     res.status(400);
     throw new Error('Please add all fields');
   }
-
   //Check if user exists
   const findUserName = 'SELECT _id FROM public.accounts WHERE username = )'
   const userExists = await User.findOne({ email });
