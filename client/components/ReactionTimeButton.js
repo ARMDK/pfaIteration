@@ -6,10 +6,10 @@ const ReactionTimeButton = ({ setGameMode }) => {
   const handleClick = (e) => {
     e.preventDefault();
     navigate('/game/reactionTime');
-    setGameMode('reactionTime');
+    setGameMode('reactionTimeGame');
   };
   return (
-    <button onClick={handleClick} className="ReactionTimeButton">
+    <button onClick={handleClick} className="GameCardButton">
       <strong className="cardTitle">Reaction Time</strong>
       <div className="fontAwesome">
         <i className="fa-solid fa-bolt fa-2xl"></i>
