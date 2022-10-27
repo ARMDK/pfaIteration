@@ -44,6 +44,7 @@ body {
   }
 }
 
+
 .MainDisplay {
   color: red;
   
@@ -218,16 +219,42 @@ body {
   cursor: pointer;
 }
 
+
+
 .signupLogin {
+  margin: 0 5px;
+  height: 70px;
+  width: 100px;
+  background-color: #3ba4d4;
+  border-radius: 40%;
   transition: all .5s ease;
 }
-
 .signupLogin:hover {
   cursor: pointer;
   color: #001F3F;
   background-color: #fff;
   box-shadow: 1px 5px 1px #888888;
 }
+
+.UserEnter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90vh;
+  background: linear-gradient(225deg, rgb(56, 41, 80), #300494);
+}
+
+.navRight {
+  transition: all .5s ease;
+}
+.navRight:hover {
+  cursor: pointer;
+  color: #001F3F;
+  background-color: #fff;
+  box-shadow: 1px 5px 1px #888888;
+}
+
 
 .red {
   color: white;

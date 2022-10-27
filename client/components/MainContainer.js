@@ -4,6 +4,7 @@ import DashDisplay from './DashDisplay';
 import Navbar from './Navbar';
 import ReactionTimeGame from './ReactionTimeGame';
 import NumberMemoryGame from './NumberMemoryGame';
+import TopScores from './TopScores';
 import StatsContainer from './StatsContainer';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Login';
@@ -59,15 +60,13 @@ const MainContainer = () => {
             </>
           }
         ></Route>
-                <Route path='/game/scores'
+
+        <Route path='/game/scores'
           element={
             <>
-              <Navbar setGameMode={setGameMode} />
-              <MainDisplay
-                gameMode={gameMode}
-                setCurrentUser={setCurrentUser}
-                setGameMode={setGameMode}
-              />
+              <Navbar setGameMode={setGameMode} currentUser={currentUser} />
+              <TopScores setGameMode={setGameMode} currentUser={currentUser} />
+              <StatsContainer gameMode={gameMode} currentUser={currentUser} />  
             </>
           }
         ></Route>
@@ -101,7 +100,6 @@ const MainContainer = () => {
             <>
               <Navbar setGameMode={setGameMode} currentUser={currentUser} />
               <NumberMemoryGame setGameMode={setGameMode} currentUser={currentUser} />
-              {/* <MainDisplay gameMode={gameMode} currentUser={currentUser} /> */}
               <StatsContainer gameMode={gameMode} currentUser={currentUser} />  
             </>
           }

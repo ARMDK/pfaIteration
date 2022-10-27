@@ -33,46 +33,6 @@ const MainDisplay = ({
   const [reactionTimeScore, setReactionTimeScore] = useState(0);
   const [gameStarted, setGameStarted] = useState(false);
 
-  // const saveReactionTimeScore = (e) => {
-  //   console.log('this is currentUser', currentUser.username);
-  //   server
-  //     .post('/game/scores', {
-  //       username: currentUser.username,
-  //       game_id: 1,
-  //       top_score: currentSpeedScore,
-  //     })
-  //     .then((res) => {
-  //       const { userHighScore, overallHighScore } = res.data;
-  //       console.log('line 40 on main display ', res.data);
-  //       setHighSpeedScore(userHighScore);
-  //       setOverallHighSpeedScore(overallHighScore);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  // if (gameMode === 'reactionTime') {
-  //   return (
-  //     <div className='reactionTimeGame'>
-  //       <ReactionTimeGame
-  //         reactionTimeScore={reactionTimeScore}
-  //         setReactionTimeScore={setReactionTimeScore}
-  //         gameStarted={gameStarted}
-  //         setGameStarted={setGameStarted}
-  //         currentSpeedScore={currentSpeedScore}
-  //         setCurrentSpeedScore={setCurrentSpeedScore}
-  //       />
-  //       {currentSpeedScore ? (
-  //         <>
-  //           <button onClick={saveReactionTimeScore}>save score</button>
-  //         </>
-  //       ) : null}
-  //     </div>
-  //   );
-  // } else if (gameMode === 'numberMemoryGame') {
-  //   return <NumberMemoryGame currentUser={currentUser} />;
-  // }
    if (gameMode === 'signUp') {
     return (
       <>
@@ -110,10 +70,7 @@ const MainDisplay = ({
   else {
     return (
         <div className='FrontPage'>
-          {/* <Login /> */}
           <UserEnter />
-          {/* <DashDisplay /> */}
-
         </div>
     );
 };
