@@ -9,6 +9,11 @@
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
   font-size: 15px;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(45deg, rgb(56, 41, 80), #300494)
 }
 
 .fontAwesome {
@@ -250,5 +255,44 @@
     height: 50px;
     width: 200px;
     font-size: 24px;
+  }
+}
+
+.topScores {
+  margin: 10% auto;
+  width: 40%;
+  height: 60%;
+
+  .scoreTable {
+    display: flex;
+    font-size: 20vh !important;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    color: rgb(214, 212, 212);
+    width: 100%;
+    height: 300px;
+
+    table {
+      border: 2px solid rgb(214, 212, 212);
+      border-collapse: collapse;
+    
+    }
+    
+    tr {
+      border: 1px solid rgb(214, 212, 212);
+      width: 100%;
+    }
+    
+    th {
+      font-size: 20px;
+      width: 100%;
+
+    }
+    td {
+      font-size: 18px;
+      width: 100%;
+    }
+
   }
 }
