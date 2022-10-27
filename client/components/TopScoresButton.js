@@ -9,9 +9,11 @@ const TopScoresButton = ({ setGameMode }) => {
       setGameMode('topScores');
     };
     return (
-      <button onClick={handleClickTopScores} className="navRight topScores">
-        <h3>Top Scores</h3>
-      </button>
+      
+        <button onClick={handleClickTopScores} className="navRight">
+          <h3>Top Scores</h3>
+        </button>
+      
     );
 }
 
