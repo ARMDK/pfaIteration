@@ -1,3 +1,10 @@
+// $primary-color: ;
+// $secondary-color: ;
+// $teritary-color: ;
+// $background-primary-color: ;
+// $background-secondary-color: ;
+// $text-color: ;
+
 * {
   font-family: 'Courier New', Courier, monospace;
   margin: 0;
@@ -66,7 +73,7 @@ body {
   font-size: 1.5rem;
 }
 
-.ReactionTimeButton {
+.GameCardButton {
   display: flex;
   flex-basis: 28%;
   flex-grow: 0;
@@ -83,7 +90,7 @@ body {
   box-shadow: 5px 8px #888888
 }
 
-.ReactionTimeButton:hover{
+.GameCardButton:hover{
   cursor: pointer;
   transform: translate(0, -10px);
 }
@@ -104,7 +111,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background: linear-gradient(225deg, rgb(56, 41, 80), #300494);
   h3 {
     display: flex;
     justify-content: center;
@@ -112,7 +119,7 @@ body {
   }
   form {
     // border-radius: 20px;
-    background-color: #ffd43b;
+    background-color: #e0d6afd3;
     border-style: dotted dashed solid solid;
     border-color: black;
     border-width: thick;
@@ -168,7 +175,7 @@ body {
   align-items: center;
   background-color: #ffffff;
   h3 {
-    background-color: #ffd43b;
+    background-color: #eee0ac;
     display: flex;
     justify-content: center;
   }
