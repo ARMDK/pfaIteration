@@ -4,6 +4,7 @@ const db = require('../models/capableHumanModels');
 const path = require('path');
 const bcrypt = require('bcrypt');
 const userController = require('../controllers/userController');
+const router = express.Router();
 
 router.get(
     "/get", async (req, res, next) => {
