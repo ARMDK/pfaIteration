@@ -7,8 +7,8 @@ const SignUp = ({ setGameMode }) => {
     baseURL: 'http://localhost:3000/',
   });
 
-  const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
+  const [fName, setfName] = useState('');
+  const [lName, setlName] = useState('');
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -16,9 +16,13 @@ const SignUp = ({ setGameMode }) => {
     e.preventDefault();
     setUserName(e.target.value);
   };
-  const handleEmailInput = (e) => {
+  const handlefNameInput = (e) => {
     e.preventDefault();
-    setEmail(e.target.value);
+    setfName(e.target.value);
+  };
+  const handlelNameInput = (e) => {
+    e.preventDefault();
+    setlName(e.target.value);
   };
   const handlePasswordInput = (e) => {
     e.preventDefault();
@@ -28,13 +32,15 @@ const SignUp = ({ setGameMode }) => {
   function submitForm(e) {
     //perform post request to the server
     // console.log(userName, email, password);
-    if (userName.length === 0 || password.length === 0 || email.length === 0) {
-      return;
+    if (userName.length === 0 || password.length === 0 || fName.length === 0 || lname.length === 0)  {
+      return alert('Please provide information to all fields!')
     }
     server
       .post('/user/signup', {
+        user_id: 10,
+        first_name: fName,
+        last_name: lName,
         username: userName,
-        email: email,
         password: password,
       })
       .then((res) => console.log(res))
@@ -57,7 +63,7 @@ const SignUp = ({ setGameMode }) => {
         <h3>Sign up here!</h3>
         <label htmlFor='fName'>First name: </label>
         <input
-          onChange={handleEmailInput}
+          onChange={handlefNameInput}
           id='fNameInput'
           name='fName'
           type='text'
@@ -66,7 +72,7 @@ const SignUp = ({ setGameMode }) => {
 
         <label htmlFor='lName'>Last name: </label>
         <input
-          onChange={handleEmailInput}
+          onChange={handlelNameInput}
           id='lNameInput'
           name='lName'
           type='text'
