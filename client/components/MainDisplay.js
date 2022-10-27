@@ -111,8 +111,8 @@ const MainDisplay = ({
     return (
         <div className='FrontPage'>
           {/* <Login /> */}
-          {/* <UserEnter /> */}
-          <DashDisplay />
+          <UserEnter />
+          {/* <DashDisplay /> */}
 
         </div>
     );

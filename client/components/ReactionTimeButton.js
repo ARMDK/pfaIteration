@@ -6,7 +6,7 @@ const ReactionTimeButton = ({ setGameMode }) => {
   const handleClick = (e) => {
     e.preventDefault();
     navigate('/game/reactionTime');
-    setGameMode('reactionTime');
+    setGameMode('reactionTimeGame');
   };
   return (
     <button onClick={handleClick} className="GameCardButton">

@@ -63,7 +63,9 @@ const DashDisplay = ({
       </div>
     );
   } else if (gameMode === 'numberMemoryGame') {
-    return <NumberMemoryGame currentUser={currentUser} />;
+    return (
+      <NumberMemoryGame currentUser={currentUser} />
+    );
   } else if (gameMode === 'topScores') {
     return (
       <div>
