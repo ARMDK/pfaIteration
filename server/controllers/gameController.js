@@ -38,7 +38,20 @@ gameController.updateGameScore = async (req, res, next) => {
 }
 
 gameController.getScores = async (req, res, next) => {
-  
+  try {
+    const query = `SELECT top_score FROM test.games;`
+    const result = await db.query(query);
+    console.log(result)
+    res.locals.scores = result.rows;
+    next();
+  }
+  catch (err) {
+    next({
+      log: `error ${err} occurs in the getScores`,
+      status: 400,
+      message: {err: 'an error occured'}
+    });
+  }
 }
 
 module.exports = gameController;
