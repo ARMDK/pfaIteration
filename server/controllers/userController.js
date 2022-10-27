@@ -4,6 +4,19 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 
 const userController = {};
+userController.signup = async (req, res, next) => {
+  try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const result = await db.query(
+      "INSERT INTO test.users (user_id,first_name,last_name,username,password) VALUES ($1,$2,$3,$4,$5) RETURNING test.users.*",
+      [req.body.username, hashedPassword]
+      );
+      console.log('result from signup controller', result)
+      return next();
+      } catch (e) {
+      return next(e);
+      }
+    };
 
 userController.loginUser = async (req, res, next) => {
   const { username, password } = req.body;
@@ -34,6 +47,7 @@ userController.loginUser = async (req, res, next) => {
       message: { err: `An error ocurred ` }
       });
 };
+
 
 }
 	
