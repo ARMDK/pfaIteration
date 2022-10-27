@@ -9,6 +9,6 @@ const userController = require('../controllers/userController');
 // });
 // post should be get 
 router.post('/login', userController.loginUser, (req, res) => {  
-    res.status(200).json('hello from login user router')
+    res.status(200).json(res.locals.username)
 });
 module.exports = router;
