@@ -70,7 +70,7 @@ const userController = require('../controllers/userController');
  
 // post should be get 
 router.post('/login', userController.loginUser, (req, res) => {  
-    res.status(201).json('login successful')
+    res.status(201).json(res.locals.username)
 });
 router.post('/signUp', userController.signup, (req, res) => {  
     res.status(201).json('signup successful from signup router')

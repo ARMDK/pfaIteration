@@ -32,7 +32,7 @@ const SignUp = ({ setGameMode }) => {
   function submitForm(e) {
     //perform post request to the server
     // console.log(userName, email, password);
-    if (userName.length === 0 || password.length === 0 || fName.length === 0 || lname.length === 0)  {
+    if (userName.length === 0 || password.length === 0 || fName.length === 0 || lName.length === 0)  {
       return alert('Please provide information to all fields!')
     }
     server

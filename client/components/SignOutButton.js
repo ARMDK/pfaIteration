@@ -11,7 +11,7 @@ const SignOutButton = ({ setGameMode }) => {
     return (
       
         <button onClick={handleClickSignOut} className="navRight">
-            <h3>SignOut</h3>
+            <h3>Sign out</h3>
         </button>
       
     );

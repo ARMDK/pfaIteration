@@ -63,14 +63,20 @@ const MainDisplay = ({
   else if (gameMode === 'dashboard'){
     return (
       <div>
-        <DashDisplay />
+        <DashDisplay 
+          gameMode={gameMode}
+          setGameMode={setGameMode} 
+        />
       </div>
     )
   }
   else {
     return (
         <div className='FrontPage'>
-          <UserEnter />
+          <UserEnter 
+            gameMode={gameMode}
+            setGameMode={setGameMode} 
+          />
         </div>
     );
 };

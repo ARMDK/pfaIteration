@@ -48,7 +48,7 @@ const Login = ({ setCurrentUser, setGameMode }) => {
       .catch((err) => {
         console.error(err);
       });
-    setGameMode('login');
+    //setGameMode('login');
     navigate('/user/login');
     // console.log(`this is the user`)
   };

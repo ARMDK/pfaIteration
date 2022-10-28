@@ -11,7 +11,7 @@ const TopScoresButton = ({ setGameMode }) => {
     return (
       
         <button onClick={handleClickTopScores} className="navRight">
-          <h3>Top Scores</h3>
+          <h3>Scores</h3>
         </button>
       
     );
