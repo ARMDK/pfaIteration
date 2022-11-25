@@ -1,1 +1,1 @@
-# capableHuman
+# gameBetter
